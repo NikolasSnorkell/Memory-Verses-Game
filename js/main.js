@@ -83,8 +83,10 @@ $("#checkBtn").on("click", function(){
 
     $("#textVerse").animate({
         height:'toggle',
-        opacity:'1',
+        opacity:"toggle"
     })
+
+   
 
     // setTimeout($("#textVerse").animate({
     //     opacity:'toggle',

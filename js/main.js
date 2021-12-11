@@ -45,24 +45,48 @@ let mas=[
 
 
 let index = 0;
-
+let checker = 0;
+// Randomizer for mas
 function getNumber(min,max){
-
     index = Math.floor(Math.random()*max);
 
-    while(index<min){
+    while(index<min||checker==index){
         index = Math.floor(Math.random()*max);
     }
+    checker = index;
     return(index);
 }
 
-function showcard(i){
-    document.querySelector("#cardFirst").innerHTML=mas[i].src;
-}
-
-
+//Apply index to verses
 function getCard(){
-  index = getNumber(0,mas.length-1);
+    index = getNumber(0,mas.length-1);
+      
+    
+        showcard(index)
+    }
 
-    showcard(index)
+//Show verse i got
+function showcard(i){
+    document.querySelector("#srcVerse").innerHTML=mas[i].src;
+    document.querySelector("#textVerse").innerHTML=mas[i].txt;
 }
+
+
+
+// $("#textVerse").css({
+//     height:'toggle',
+//     opacity:'0',
+// })
+
+
+$("#checkBtn").on("click", function(){
+
+    $("#textVerse").animate({
+        height:'toggle',
+        opacity:'1',
+    })
+
+    // setTimeout($("#textVerse").animate({
+    //     opacity:'toggle',
+    // }),400)
+})

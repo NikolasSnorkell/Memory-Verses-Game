@@ -10,3 +10,8 @@ input{
     height: 30px;
     border: 1px solid black;
 }
+
+#output{
+    font-family: 'Arial';
+    font-size: 1.2rem;
+}

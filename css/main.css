@@ -1,0 +1,12 @@
+input{
+    border: 1px solid black;
+    margin: 10px;
+    width: 350px;
+    height: 30px;
+}
+
+#btn,#btn2{
+    width: 70px;
+    height: 30px;
+    border: 1px solid black;
+}

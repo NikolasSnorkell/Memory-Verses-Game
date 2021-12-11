@@ -41,3 +41,28 @@ let mas=[
 //         output.innerHTML+='{<b>src:</b> "'+mas[i].src+'", <b>txt:</b>"'+mas[i].txt+'"},<br>'
 //     }
 // }
+
+
+
+let index = 0;
+
+function getNumber(min,max){
+
+    index = Math.floor(Math.random()*max);
+
+    while(index<min){
+        index = Math.floor(Math.random()*max);
+    }
+    return(index);
+}
+
+function showcard(i){
+    document.querySelector("#cardFirst").innerHTML=mas[i].src;
+}
+
+
+function getCard(){
+  index = getNumber(0,mas.length-1);
+
+    showcard(index)
+}

@@ -1,4 +1,5 @@
-let mas=[{src: "Филиппийцам 2:13", txt:"Ведь сам Бог ради того, что ему угодно, действует в вас, чтобы вы и желали, и действовали."},
+let mas=[
+{src: "Филиппийцам 2:13", txt:"Ведь сам Бог ради того, что ему угодно, действует в вас, чтобы вы и желали, и действовали."},
 {src: "Филиппийцам 4:13", txt:"Всё мне под силу благодаря тому, кто меня укрепляет."},
 {src: "1 Коринфянам 15:33", txt:"Не заблуждайтесь. Плохое окружение губит полезные привычки."},
 {src: "Евреям 11:1", txt:"Вера — это твёрдая убеждённость в том, что наша надежда осуществится, ясное доказательство существования того, что невидимо."},
@@ -14,25 +15,29 @@ let mas=[{src: "Филиппийцам 2:13", txt:"Ведь сам Бог рад
 {src: "Иакова 2:26", txt:"Итак, как тело без духа мертво, так и вера без дел мертва."},
 {src: "Деяния 17:11", txt:"Люди здесь были более широких взглядов, чем фессалоники́йцы: они охотно приняли слово Бога и каждый день усердно исследовали Писание, проверяя, верно ли то, что им говорят."},
 {src: "Римлянам 12:10", txt:"Любите друг друга, как братья, и относитесь друг к другу с теплотой. Первыми проявляйте уважение к другим."},];
-let currentVerse ="";
 
 
+// Блок для добавления стихов в массив
+// ------------------------------------
 
-function getMas(){
+// let currentVerse ="";
+
+
+// function getMas(){
  
-    currentVerse = document.querySelector("#innerVerse").value;
-    currentVerse = currentVerse.split("/");
-    document.querySelector("#innerVerse").value = "";
-    mas.push({src:currentVerse[0],txt:currentVerse[1]});
-    console.log(mas);
+//     currentVerse = document.querySelector("#innerVerse").value;
+//     currentVerse = currentVerse.split("/");
+//     document.querySelector("#innerVerse").value = "";
+//     mas.push({src:currentVerse[0],txt:currentVerse[1]});
+//     console.log(mas);
   
-}
+// }
 
 
-function Output(){
-    output.innerHTML="";
+// function Output(){
+//     output.innerHTML="";
 
-    for(let i=0;i<mas.length;i++){
-        output.innerHTML+='{<b>src:</b> "'+mas[i].src+'", <b>txt:</b>"'+mas[i].txt+'"},<br>'
-    }
-}
+//     for(let i=0;i<mas.length;i++){
+//         output.innerHTML+='{<b>src:</b> "'+mas[i].src+'", <b>txt:</b>"'+mas[i].txt+'"},<br>'
+//     }
+// }

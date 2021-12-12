@@ -57,25 +57,31 @@ function getNumber(min,max){
     return(index);
 }
 
+
+document.querySelector("#nextBtn").addEventListener("click",getCard);
+
 let lock = 0;
 //Apply index to verses
 function getCard(){
 
-if(lock==0){
-    $("#textVerse").animate({
-        height:'toggle',
-        opacity:"toggle"
-    },1)
-}
-lock=1;
+        if(lock==0){
+            $("#textVerse").animate({
+                height:'toggle',
+                opacity:"toggle"
+            },1)
+        }
+        lock=1;
 
 
 
-    index = getNumber(0,mas.length-1);
+            index = getNumber(0,mas.length-1);
       
     
-        showcard(index)
+            showcard(index)
     }
+
+
+
 
 //Show verse i got
 function showcard(i){
@@ -98,9 +104,13 @@ $("#checkBtn").on("click", function(){
         opacity:"toggle"
     })
 
-   
+   document.querySelector("#nextBtn").toggleAttribute("disabled");
 
-    // setTimeout($("#textVerse").animate({
-    //     opacity:'toggle',
-    // }),400)
+   if(document.querySelector("#nextBtn").hasAttribute("disabled")==true){
+   document.querySelector("#checkBtn").innerHTML="Скрыть";
+   } else {
+    document.querySelector("#checkBtn").innerHTML="Проверить";
+   }
+
+  
 })

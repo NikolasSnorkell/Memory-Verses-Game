@@ -57,8 +57,20 @@ function getNumber(min,max){
     return(index);
 }
 
+let lock = 0;
 //Apply index to verses
 function getCard(){
+
+if(lock==0){
+    $("#textVerse").animate({
+        height:'toggle',
+        opacity:"toggle"
+    },1)
+}
+lock=1;
+
+
+
     index = getNumber(0,mas.length-1);
       
     

@@ -58,6 +58,10 @@ function getNumber(min,max){
 }
 
 
+
+
+
+
 document.querySelector("#nextBtn").addEventListener("click",getCard);
 
 let lock = 0;
@@ -114,3 +118,43 @@ $("#checkBtn").on("click", function(){
 
   
 })
+
+
+
+
+
+
+
+for(let i=0;i<mas.length;i++){
+    document.querySelector('#srcText').innerHTML+="<p class='srcTexts'>"+mas[i].src+"<br></p>"
+}
+$("#srcList").css("height",'30px');
+$(".srcTexts").css("opacity",'0');
+
+    document.querySelector("#arrowTitleCont").addEventListener("click",getSrcList);
+let rotate = 0;
+
+            function getSrcList(){
+            // document.getElementById("imgSrc").toggleAttribute("style",'transform:rotate(180deg)')
+            if(rotate==0){
+                $("#imgSrc").css("transform",'rotate(-180deg)');
+
+                $("#srcList").animate({height:'850px'});
+                // $("#srcList").css("height",'1050px');
+                $(".srcTexts").animate({opacity:'1'});
+            
+
+                rotate=1;
+            }
+                else {
+                    $("#imgSrc").css("transform",'rotate(0deg)');
+
+                    $("#srcList").animate({height:'30px'});
+                    // $("#srcList").css("height",'30px');
+                    $(".srcTexts").animate({opacity:'0'});
+
+            
+
+                    rotate=0;
+                }
+            }

@@ -8,7 +8,7 @@ let mas=[
 {src: "Иакова 4:8", txt:"Приблизьтесь к Богу, и он приблизится к вам. Омойте руки, грешники, и очистите сердца, нерешительные."},
 {src: "1 Тимофею 4:3", txt:"Ведь настанет время, когда люди отвергнут здравое учение и, следуя своим желаниям, будут искать учителей, которые бы говорили им лишь то, что они хотят услышать."},
 {src: "Исайя 41:10", txt:"Не бойся, потому что я с тобой. Не тревожься, потому что я твой Бог. Я укреплю тебя, помогу тебе, Буду крепко держать тебя правой рукой."},
-{src: "2 Царей 6:16", txt:"«Не бойся, — ответил Елисей, — потому что тех, кто с нами, больше, чем тех, кто с ними»."},
+{src: "2 Царей 6:16", txt:"Не бойся, — ответил Елисей, — потому что тех, кто с нами, больше, чем тех, кто с ними»."},
 {src: "1 Летопись 28:9", txt:"И ты, мой сын Соломон, знай Бога своего отца и служи ему всем сердцем и всей душой, потому что Иегова исследует сердца всех людей и знает их мысли и желания. Если ты будешь искать его, то найдёшь его, а если отвернёшься от него, он отвергнет тебя навсегда."},
 {src: "1 Самуила 15:22", txt:"Самуил сказал: «Разве всесожжения и жертвы так же радуют Иегову, как послушание Иегове? Послушание лучше жертвы, и покорность лучше жира баранов."},
 {src: "Притчи 24:16", txt:"Ведь праведный может упасть и семь раз, но всё равно встанет, А грешник во время бедствия упадёт и не поднимется."},
@@ -60,11 +60,12 @@ function getNumber(min,max){
 
 
 
-
+document.querySelector("#checkBtn").toggleAttribute("disabled");
 
 document.querySelector("#nextBtn").addEventListener("click",getCard);
 let startBtnNameKey = 0;
 let lock = 0;
+let checkLock = 0;
 //Apply index to verses
 
 function getCard(){
@@ -82,12 +83,20 @@ function getCard(){
 
         startBtnNameKey=1;
 
-
+        if(checkLock==0){
+            document.querySelector("#checkBtn").toggleAttribute("disabled");
+        }
+        checkLock=1;
 
             index = getNumber(0,mas.length-1);
-      
+        
+
+           
+
     
             showcard(index)
+
+          
     }
 
 
@@ -95,8 +104,18 @@ function getCard(){
 
 //Show verse i got
 function showcard(i){
+    $("#srcVerse").animate({
+        opacity:"0"
+    },400);
+    setTimeout(function(){
     document.querySelector("#srcVerse").innerHTML=mas[i].src;
-    document.querySelector("#textVerse").innerHTML=mas[i].txt;
+    document.querySelector("#textVerse").innerHTML="<span class='quotes'>&#171;</span> "+mas[i].txt+" <span class='quotes'>&#187;</span>";
+   },400)
+   
+    $("#srcVerse").animate({
+        opacity:"1"
+    },400);
+
 }
 
 

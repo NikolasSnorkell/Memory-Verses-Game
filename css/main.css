@@ -1,8 +1,46 @@
+@font-face {
+    font-family: Play;
+    src: url(../fonts/Play-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: Play;
+    src: url(../fonts/Play-Regular.ttf);
+    font-weight: 200;
+}
+
+*{
+    font-family: Play;
+}
+
 body{
+   
     min-height: 100vh;
    height: auto;
-   overflow: auto;
+   overflow-y: scroll;
+   overflow-x: hidden;
+
+   scrollbar-width: 0;
+   scrollbar-color: blue;
 }
+
+  body::-webkit-scrollbar {
+    /* height: 12px; */
+    width: 0px;
+
+  }
+  body::-webkit-scrollbar-track {
+    
+    background: transparent;
+  }
+  body::-webkit-scrollbar-thumb {
+    background-color: blue;
+    border-radius: 5px;
+    
+  }
+
+
 
 
 input{
@@ -35,34 +73,53 @@ input{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background:linear-gradient(to right,#4138B7,#AD66B2);
 }
 
 
+.coverCard{
+    box-shadow: 1px 10px 20px rgba(0, 0, 0,0.4);
 
+    margin: 20px 0; 
+   transition: box-shadow .5s ease-in-out;
+}
+.coverCard:hover{
+    box-shadow: 1px 10px 20px rgba(0, 0, 0,0.6);
+}
 
 #cardFirst{
     width: 400px;
     min-height: 250px;
     height: auto;
     font-size: 1.2rem;
-    background: rgb(197, 197, 197);;
+    background: rgb(116, 57, 172);;
+
+    color: white;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     row-gap: 15px;
+
+    padding: 0 10px;
 }
 
 #textVerse{
- 
+    font-size: 1.4rem;
+}
+
+#srcVerse{
+    font-size: 1.5rem;
+    border-bottom: 2px solid rgb(255, 213, 220);
+    padding-bottom: 5px;
 }
 
 #srcList{
     width: 400px;
     min-height: 30px;
     font-size: 1.2rem;
-    background: grey;
+    background: rgb(233, 180, 247);
 
     display: flex;
     flex-direction: column;
@@ -70,8 +127,9 @@ input{
     align-items: center;
     column-gap: 15px;
 
-    
-    margin-top: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+   
 }
 
 #srcListImg,#srcListTitle{
@@ -96,21 +154,32 @@ input{
 
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+   
 }
 
 .buttons{
     width: 50%;
     height: 40px;
-}
+    font-size: 1.3rem;
+    
 
+    border-bottom-left-radius: 10px;
+    border-right: 1px solid rgb(185, 185, 185);
+}
+.buttons:nth-child(2){
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 10px;
+    border-right: 0px solid black;
+    border-left: 1px solid rgb(119, 119, 119);
+}
 #arrowTitleCont{
     width: 400px;
     min-height: 30px;
     font-size: 1.2rem;
-    background: rgba(134, 196, 223, 0.6);
+    background: rgb(255, 255, 255);
    
-    
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 
     display: flex;
     
@@ -134,4 +203,9 @@ input{
 
 #srcText p{
     margin: 5px;
+}
+
+.quotes{
+    font-size: 1.6rem;
+    vertical-align:middle;
 }

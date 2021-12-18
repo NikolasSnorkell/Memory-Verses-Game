@@ -63,9 +63,10 @@ function getNumber(min,max){
 
 
 document.querySelector("#nextBtn").addEventListener("click",getCard);
-
+let startBtnNameKey = 0;
 let lock = 0;
 //Apply index to verses
+
 function getCard(){
 
         if(lock==0){
@@ -75,6 +76,11 @@ function getCard(){
             },1)
         }
         lock=1;
+        if(startBtnNameKey==0){
+            document.querySelector("#nextBtn").innerHTML = "Далее";
+        }
+
+        startBtnNameKey=1;
 
 
 
@@ -130,8 +136,10 @@ for(let i=0;i<mas.length;i++){
 }
 $("#srcList").css("height",'30px');
 $(".srcTexts").css("opacity",'0');
+$(".srcTexts").css("visibility",'hidden');
 
     document.querySelector("#arrowTitleCont").addEventListener("click",getSrcList);
+
 let rotate = 0;
 
             function getSrcList(){
@@ -139,8 +147,9 @@ let rotate = 0;
             if(rotate==0){
                 $("#imgSrc").css("transform",'rotate(-180deg)');
 
-                $("#srcList").animate({height:'850px'});
+                $("#srcList").animate({height:'500px'});
                 // $("#srcList").css("height",'1050px');
+                $(".srcTexts").css("visibility",'visible');
                 $(".srcTexts").animate({opacity:'1'});
             
 
@@ -151,8 +160,9 @@ let rotate = 0;
 
                     $("#srcList").animate({height:'30px'});
                     // $("#srcList").css("height",'30px');
-                    $(".srcTexts").animate({opacity:'0'});
 
+                    $(".srcTexts").animate({opacity:'0'});
+                    $(".srcTexts").css("visibility",'hidden');
             
 
                     rotate=0;

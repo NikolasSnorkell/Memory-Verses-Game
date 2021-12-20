@@ -88,7 +88,7 @@ function getCard(){
         }
         checkLock=1;
 
-            index = getNumber(0,mas.length-1);
+            index = getNumber(0,mas.length);
         
 
            

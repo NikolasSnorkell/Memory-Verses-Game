@@ -82,7 +82,7 @@ let lock = 0;
 let checkLock = 0;
 //Apply index to verses
 
-function getCard(){
+function getCard(elem){
 
         if(lock==0){
             $("#textVerse").animate({
@@ -102,14 +102,25 @@ function getCard(){
         }
         checkLock=1;
 
-            index = getNumber(0,mas.length);
-        
+       
 
-           
-
-    
+        if(elem.innerText==undefined){
+            index = getNumber(0,mas.length);    
             showcard(index)
+        } else {
+            for(let i=0;i<mas.length;i++){
+                if(mas[i].src==elem.innerText) {
+                    index=i;
+                    srcListShow(rotate);
 
+                    showVerse("src");
+                    showcard(index);
+
+                    break
+                }
+
+            }
+        }
           
     }
 
@@ -140,8 +151,11 @@ function showcard(i){
 // })
 
 
-$("#checkBtn").on("click", function(){
+$("#checkBtn").on("click",function(){showVerse("btn")})
 
+
+function showVerse(key){
+if(key=="btn"){
     $("#textVerse").animate({
         height:'toggle',
         opacity:"toggle"
@@ -149,23 +163,39 @@ $("#checkBtn").on("click", function(){
 
    document.querySelector("#nextBtn").toggleAttribute("disabled");
 
-   if(document.querySelector("#nextBtn").hasAttribute("disabled")==true){
-   document.querySelector("#checkBtn").innerHTML="Скрыть";
-   } else {
-    document.querySelector("#checkBtn").innerHTML="Проверить";
-   }
-
+//    if(document.querySelector("#nextBtn").hasAttribute("disabled")==true){
+//    document.querySelector("#checkBtn").innerHTML="Скрыть";
+//    } else {
+//     document.querySelector("#checkBtn").innerHTML="Проверить";
+//    }
+}
   
-})
+
+if(key=="src"){
+if( document.querySelector("#nextBtn").hasAttribute("disabled")==true){
+    $("#textVerse").animate({
+        height:'toggle',
+        opacity:"toggle"
+    })
+    document.querySelector("#nextBtn").toggleAttribute("disabled");
+}
+}
 
 
+if(document.querySelector("#nextBtn").hasAttribute("disabled")==true){
+    document.querySelector("#checkBtn").innerHTML="Скрыть";
+    } else {
+     document.querySelector("#checkBtn").innerHTML="Проверить";
+    }
 
+
+}
 
 
 
 
 for(let i=0;i<mas.length;i++){
-    document.querySelector('#srcText').innerHTML+="<p class='srcTexts'>"+mas[i].src+"<br></p>"
+    document.querySelector('#srcText').innerHTML+="<p class='srcTexts' onclick='getCard(this)'>"+mas[i].src+"</p>"
 }
 $("#srcList").css("height",'40px');
 $(".srcTexts").css("opacity",'0');
@@ -173,31 +203,49 @@ $(".srcTexts").css("display",'none');
 
     document.querySelector("#arrowTitleCont").addEventListener("click",getSrcList);
 
-let rotate = 0;
+let rotate = 0, keyForClickFunc = 0;;
 
             function getSrcList(){
-            // document.getElementById("imgSrc").toggleAttribute("style",'transform:rotate(180deg)')
-            if(rotate==0){
-                $("#imgSrc").css("transform",'rotate(-180deg)');
-
-                $("#srcList").animate({height:'700px'});
-                // $("#srcList").css("height",'1050px');
-                $(".srcTexts").css("display",'block');
-                $(".srcTexts").animate({opacity:'1'});
             
+                // if(keyForClickFunc == 0){
+                //     let srcS = document.querySelectorAll(".srcTexts");
+                //     // for(let i=0;i<srcS.length;i++){
+                //     //     srcS[i].addEventListener("click",console.log(this));
+                //     // }
 
-                rotate=1;
+                //     keyForClickFunc=1;
+                // }
+               
+                srcListShow(rotate)
+           
             }
-                else {
-                    $("#imgSrc").css("transform",'rotate(0deg)');
 
-                    $("#srcList").animate({height:'40px'});
-                    // $("#srcList").css("height",'30px');
+            function srcListShow(coeff){
 
-                    $(".srcTexts").animate({opacity:'0'});
-                    $(".srcTexts").css("display",'none');
-            
-
-                    rotate=0;
+                if(coeff==0){
+                    $("#imgSrc").css("transform",'rotate(-180deg)');
+    
+                    $("#srcList").animate({height:'700px'});
+                    // $("#srcList").css("height",'1050px');
+                    $(".srcTexts").css("display",'block');
+                    $(".srcTexts").animate({opacity:'1'});
+                
+                    rotate = 1;
+                   
                 }
+                    else {
+                        $("#imgSrc").css("transform",'rotate(0deg)');
+    
+                        $("#srcList").animate({height:'40px'});
+                        // $("#srcList").css("height",'30px');
+    
+                        $(".srcTexts").animate({opacity:'0'});
+                        $(".srcTexts").css("display",'none');
+                
+                        rotate = 0;
+                        
+                    }
+
+
+
             }

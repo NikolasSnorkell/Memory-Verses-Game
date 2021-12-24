@@ -214,6 +214,11 @@ input{
 
 #srcText p{
     margin: 5px;
+    cursor:pointer;
+    
+}
+#srcText p:hover{
+   text-decoration: underline;
 }
 
 .quotes{

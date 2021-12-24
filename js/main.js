@@ -263,6 +263,7 @@ let logKey =0;
                 $("#changesList").css("display",'block');
                 $("#changesList").animate({opacity:'1'});
                 $("#changeLog").css('background','rgba(0,0,0,0.8)');
+                $("#changeLog").css('boxShadow','0 8px 7px 0 rgba(0, 0, 0,0.4)');
             
                 logKey = 1;
                
@@ -276,6 +277,7 @@ let logKey =0;
                     $("#changesList").animate({opacity:'0'});
                     $("#changesList").css("display",'none');
                     $("#changeLog").css('background','rgba(0,0,0,0.5)');
+                    $("#changeLog").css('boxShadow','0 0px 7px 0 rgba(0, 0, 0,0.4)');
             
                     logKey = 0;
                     

@@ -277,8 +277,9 @@ input{
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     border: 1px solid rgb(175, 175, 175);
+    box-shadow:0 0px 7px 0 rgba(0, 0, 0,0.4);
 
-    transition: background 0.4s ease-in-out;
+    transition: background 0.4s ease-in-out,box-shadow 0.4s ease-in-out;
 }
 #changeLog h1{
     font-size: 1.5rem;

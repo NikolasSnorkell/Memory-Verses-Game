@@ -257,11 +257,59 @@ input{
 
 
 
+
+
+#changeLog{
+    position: absolute;
+    top: 0;
+    min-height: 35px;
+    width: 500px;
+
+    text-align: center;
+
+    margin: 0 auto;
+    padding: 5px 25px;
+    
+    color: White;
+
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 1px solid rgb(175, 175, 175);
+
+    transition: background 0.4s ease-in-out;
+}
+#changeLog h1{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+#changeLog p{
+    font-size: 1.3rem;
+
+    display: none;
+    opacity: 0;
+    margin-top: 50px;
+    text-align: left;
+}
+
+
+@media screen and (max-width:520px) {
+    
+
+
+    #changeLog{
+        width:450px;
+
+    }
+}
+
+
 @media screen and (max-width:430px) {
     
 
 
-    #arrowTitleCont,#btns,#srcList, #cardFirst{
+    #arrowTitleCont,#btns,#srcList, #cardFirst,#changeLog{
         width:350px;
 
     }
@@ -276,6 +324,10 @@ input{
     #arrowTitleCont,#btns,#srcList, #cardFirst{
         width:300px;
     }
+
+    #changeLog{
+        width: 320px;
+    }
 }
 
 @media screen and (max-width:300px) {
@@ -289,13 +341,23 @@ input{
     }
 }
 
+@media screen and (max-width:280px) {
+    
+
+
+    #changeLog{
+        width:300px;
+
+    }
+}
+
 @media screen and (max-width:250px) {
     
     html{
         font-size: 10px;
     }
 
-    #arrowTitleCont,#btns,#srcList, #cardFirst{
+    #arrowTitleCont,#btns,#srcList, #cardFirst,#changeLog{
         width:210px;
     }
 }

@@ -249,3 +249,35 @@ let rotate = 0, keyForClickFunc = 0;;
 
 
             }
+
+
+
+        document.querySelector("#changeLog").addEventListener("click",changeLogFunc);
+let logKey =0;
+        function changeLogFunc(){
+            if(logKey==0){
+              
+
+                $("#changeLog").animate({height:'180px'});
+                // $("#srcList").css("height",'1050px');
+                $("#changesList").css("display",'block');
+                $("#changesList").animate({opacity:'1'});
+                $("#changeLog").css('background','rgba(0,0,0,0.8)');
+            
+                logKey = 1;
+               
+            }
+                else {
+                  
+
+                    $("#changeLog").animate({height:'35px'});
+                    // $("#srcList").css("height",'30px');
+
+                    $("#changesList").animate({opacity:'0'});
+                    $("#changesList").css("display",'none');
+                    $("#changeLog").css('background','rgba(0,0,0,0.5)');
+            
+                    logKey = 0;
+                    
+                }
+        }

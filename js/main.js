@@ -418,9 +418,9 @@ let logKey =0;
 
 
 // Themes block
-
-
-let num = 0;
+if(localStorage.getItem('ThemeNumber')==null){
+    let num=0
+} else num = localStorage.getItem('ThemeNumber');
 $('head').append('<link rel="stylesheet" type="text/css" href="css/theme'+num+'.css">');
 document.querySelector("#themeTitle").innerHTML = "Тема#"+num;
 
@@ -445,6 +445,7 @@ function themeChange(key){
             $('#off').attr("src","icons/empty_check.png");
         }
         if(num==6) num=0;
+        localStorage.setItem('ThemeNumber', num);
     }
 
     if(key=="minus"){
@@ -459,7 +460,7 @@ function themeChange(key){
             $('#on').attr("src","icons/filled_check.png");
             $('#off').attr("src","icons/empty_check.png");
         }
-        
+        localStorage.setItem('ThemeNumber', num);
     }
     document.querySelector("#themeTitle").innerHTML = "Тема#"+num;
     $('head').append('<link rel="stylesheet" type="text/css" href="css/theme'+num+'.css">');

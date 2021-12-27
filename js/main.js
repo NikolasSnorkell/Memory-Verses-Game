@@ -254,7 +254,7 @@ let rotate = 0, keyForClickFunc = 0;;
                 if(coeff==0){
                     $("#imgSrc").css("transform",'rotate(-180deg)');
     
-                    $("#srcList").animate({height:'950px'});
+                    $("#srcList").animate({height:'970px'});
                     // $("#srcList").css("height",'1050px');
                     $(".srcBlocks").css("display",'flex');
                     $(".srcTexts").animate({opacity:'1'});
@@ -380,7 +380,7 @@ let logKey =0;
             if(logKey==0){
               
 
-                $("#changeLog").animate({height:'230px'});
+                $("#changeLog").animate({height:'300px'});
                 // $("#srcList").css("height",'1050px');
                 $("#changesList").css("display",'block');
                 $("#changesList").animate({opacity:'1'});
@@ -405,3 +405,37 @@ let logKey =0;
                     
                 }
         }
+
+
+
+
+// Themes block
+
+
+let num = 0;
+$('head').append('<link rel="stylesheet" type="text/css" href="css/theme'+num+'.css">');
+document.querySelector("#themeTitle").innerHTML = "Тема#"+num;
+
+$('#plusT').on('click',function(){themeChange("plus")});
+$('#minusT').on('click',function(){themeChange("minus")});
+
+// document.querySelector("#plusT").addEventListener("click",function(){
+//     themeChange("plus");
+// })
+function themeChange(key){
+
+    if(key=="plus"){
+        num++;
+        if(num==4) num=0;
+    }
+    if(key=="minus"){
+        num--;
+        if(num==-1) num=3;
+    }
+    document.querySelector("#themeTitle").innerHTML = "Тема#"+num;
+    $('head').append('<link rel="stylesheet" type="text/css" href="css/theme'+num+'.css">');
+
+}
+
+
+

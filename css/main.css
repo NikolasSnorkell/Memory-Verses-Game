@@ -13,6 +13,8 @@
 *{
     font-family: Play;
     box-sizing: border-box;
+
+    transition: background 0.4s ease-in-out, border 0.4s ease-in-out;
 }
 
 body{
@@ -75,33 +77,24 @@ input{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background:linear-gradient(to right,#4138B7,#AD66B2);
+   
 }
 
 
 .coverCard{
-    box-shadow: 1px 10px 20px rgba(0, 0, 0,0.4);
-
     margin: 20px; 
     margin-top: 50px;
     margin-bottom: 100px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    
-   transition: box-shadow .5s ease-in-out;
+  
 }
-.coverCard:hover{
-    box-shadow: 1px 10px 20px rgba(0, 0, 0,0.6);
-}
+
 
 #cardFirst{
     width: 400px;
     min-height: 250px;
     height: auto;
     font-size: 1.2rem;
-    background: rgb(116, 57, 172);;
-
-    color: white;
+    
 
     display: flex;
     flex-direction: column;
@@ -119,9 +112,6 @@ input{
 
 #srcVerse{
     font-size: 1.5rem;
-    border-bottom: 2px solid #ffd5dc;
-    --webkit-border-bottom: 2px solid #ffd5dc;
-    /* --webkit-border-bottom: 2px solid rgb(255, 213, 220); */
     padding-bottom: 5px;
 }
 
@@ -129,10 +119,7 @@ input{
     width: 400px;
     min-height: 30px;
     font-size: 1.4rem;
-    background: rgb(243, 199, 255);
-    color: #000;
-
-    --webkit-color:#000;
+   
 
     display: flex;
     flex-direction: column;
@@ -140,9 +127,6 @@ input{
     align-items: center;
     column-gap: 15px;
 
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-   
 }
 
 #srcListImg,#srcListTitle{
@@ -189,11 +173,6 @@ input{
     width: 400px;
     min-height: 40px;
     font-size: 1.3rem;
-    background: rgb(255, 255, 255);
-    --webkit-background: rgb(255, 255, 255);
-   
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 
     display: flex;
     
@@ -209,10 +188,7 @@ input{
     width: 100%;
     height: auto;
     padding-top: 15px;
-   
-   
 
-  
 }
 
 #srcText p{
@@ -223,10 +199,7 @@ input{
    text-align: left;
     
 }
-#srcText p:hover{
-   text-decoration: underline;
-   
-}
+
 
 .srcBlocks{
     width: 100%;
@@ -239,12 +212,39 @@ input{
 
     padding:10px 0;
 
-    transition: background 0.4s ease-in-out;
+}
 
+
+#themeCont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-left: 5px; */
+    column-gap: 5px;
+    
+    /* width: 50px; */
+    
 }
-.srcBlocks:hover{
-    background: rgb(255, 255, 255);
+#themeCont p{
+    padding: 3px;
 }
+.plusMinus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-size: 2rem;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+
+
+
+
+
 
 .checkBoxes{
     width: 20px;
@@ -262,18 +262,15 @@ input{
     content: '';
     position: absolute;
  
-    background-image: url(../icons/empty_check.png);
     background-size: 20px;
-    /* background-color: rgb(233, 180, 247); */
+   cursor: pointer;
     width: 20px;
     height: 20px;
-    /* z-index: 1000; */
     display: block;
     transition: opacity 0.2s ease-in-out;
 }
 
 .checkBoxes::after{
-    background-image: url(../icons/filled_check.png);
     opacity: 0;
 }
 
@@ -289,14 +286,12 @@ opacity: 1;
 
 
 #teqBlock{
-    border-bottom: 1px solid white;
+   
     display: flex;
     justify-content: space-between;
     padding:5px 10px ;
 
     width: 100%;
-    
-   
 }
 
 #checkSwitches{
@@ -310,6 +305,7 @@ opacity: 1;
 }
 #slash{
     font-size: 1.7rem;
+    cursor: default;
 }
 
 
@@ -333,17 +329,10 @@ opacity: 1;
 }
 
 
-.contactInfo{
-   
-    color: rgba(255, 255, 255, 0.5);
-    
-   
-  
-}
+
 
 .contactInfo a{
     text-decoration: underline;
-    color:rgba(255, 255, 255, 0.7);
 }
 
 
@@ -356,23 +345,12 @@ opacity: 1;
     top: 0;
     min-height: 35px;
     width: 500px;
-
     text-align: center;
-
     margin: 0 auto;
     padding: 5px 25px;
-    
-    color: White;
-
     cursor: pointer;
-    background: rgba(0,0,0,0.5);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border: 1px solid rgb(175, 175, 175);
     border-top: none;
-    box-shadow:0 0px 7px 0 rgba(0, 0, 0,0.4);
-
-    transition: background 0.4s ease-in-out,box-shadow 0.4s ease-in-out;
+ 
 }
 #changeLog h1{
     font-size: 1.5rem;
@@ -386,6 +364,18 @@ opacity: 1;
     margin-top: 50px;
     text-align: left;
 }
+
+
+
+
+
+
+
+
+
+/* Media BELOW ----------------------------------------------*/ 
+
+
 
 
 @media screen and (max-width:520px) {

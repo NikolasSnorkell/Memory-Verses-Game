@@ -1,0 +1,97 @@
+#container{
+    background: linear-gradient(to right,#778DA2,#1653C6);
+
+}
+
+.coverCard{
+    box-shadow: 1px 10px 20px rgba(0, 0, 0,0.4);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: box-shadow .5s ease-in-out;
+}
+
+.coverCard:hover{
+    box-shadow: 1px 10px 20px rgba(0, 0, 0,0.6);
+}
+
+#cardFirst{
+    background: rgb(43, 82, 141);;
+
+    color: white;
+}
+
+#srcVerse{
+    border-bottom: 2px solid #06b4f8;
+    --webkit-border-bottom: 2px solid #06b4f8;
+}
+
+#srcList{
+    background: rgb(187, 205, 255);
+    color: #000;
+
+    --webkit-color:#000;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#arrowTitleCont{
+    background: rgb(255, 255, 255);
+    --webkit-background: rgb(255, 255, 255);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#srcText p:hover{
+    text-decoration: underline;
+    
+ }
+
+ .srcBlocks{
+    transition: background 0.4s ease-in-out;
+ }
+
+ .srcBlocks:hover{
+    background: rgb(255, 255, 255);
+}
+
+#themeCont p{
+    background: white;
+}
+
+.plusMinus{
+    color: white;
+    background: rgb(123, 131, 179);
+    border: 1px solid white;
+}
+
+.checkBoxes::before,.checkBoxes::after{
+    background-image: url(../icons/empty_check.png);
+}
+
+.checkBoxes::after{
+    background-image: url(../icons/filled_check.png);
+}
+
+#teqBlock{
+    border-bottom: 1px solid rgb(103, 156, 253);
+}
+
+.contactInfo{
+   
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contactInfo a{
+    color:rgba(255, 255, 255, 0.9);
+}
+
+#changeLog{
+    color: White;
+    background: rgba(0,0,0,0.5);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 1px solid rgb(175, 175, 175);
+    box-shadow:0 0px 7px 0 rgba(0, 0, 0,0.4);
+    transition: background 0.4s ease-in-out,box-shadow 0.4s ease-in-out;
+}

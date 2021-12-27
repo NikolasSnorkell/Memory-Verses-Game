@@ -418,9 +418,10 @@ let logKey =0;
 
 
 // Themes block
+let num=0;
 if(localStorage.getItem('ThemeNumber')==null||localStorage.getItem('ThemeNumber')==undefined){
-    let num=0
-} else num = localStorage.getItem('ThemeNumber');
+    num=0
+} else { num = localStorage.getItem('ThemeNumber');}
 
 $('head').append('<link rel="stylesheet" type="text/css" href="css/theme'+num+'.css">');
 document.querySelector("#themeTitle").innerHTML = "Тема#"+num;

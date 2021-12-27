@@ -63,19 +63,20 @@ let mas=[
 // }
 
 
+let actualMas = [];
+let masSwitcher = mas;
+
 
 let index = 0;
 let checker = 0;
 // Randomizer for mas
-function getNumber(min,max){
-    index = Math.floor(Math.random()*max);
 
-    while(index<min||checker==index){
-        index = Math.floor(Math.random()*max);
-    }
-    checker = index;
-    return(index);
-}
+
+
+
+
+
+
 
 
 
@@ -111,8 +112,9 @@ function getCard(elem){
        
 
         if(elem.innerText==undefined){
-            index = getNumber(0,mas.length);    
-            showcard(index)
+            index = getNumber(0,masSwitcher.length);   
+          
+            showcard(index,"masSwitcher");
         } else {
             for(let i=0;i<mas.length;i++){
                 if(mas[i].src==elem.innerText) {
@@ -120,7 +122,7 @@ function getCard(elem){
                     srcListShow(rotate);
 
                     showVerse("src");
-                    showcard(index);
+                    showcard(index,"mas");
 
                     break
                 }
@@ -131,17 +133,44 @@ function getCard(elem){
     }
 
 
+    function getNumber(min,max){
+        if(max==1){
+             index = 0;
+
+            }else
+             {
+            index = Math.floor(Math.random()*max);
+
+            while(checker==index){
+                index = Math.floor(Math.random()*max);
+            }
+            checker = index;
+        }
+    
+    
+        return(index);
+    }
+
 
 
 //Show verse i got
-function showcard(i){
+function showcard(i,key){
     $("#srcVerse").animate({
         opacity:"0"
     },400);
+
+    if((masSwitcher.length==mas.length)||key=="mas"){
     setTimeout(function(){
     document.querySelector("#srcVerse").innerHTML=mas[i].src;
     document.querySelector("#textVerse").innerHTML="<span class='quotes'>&#171;</span> "+mas[i].txt+" <span class='quotes'>&#187;</span>";
    },400)
+} else {
+    setTimeout(function(){      
+        document.querySelector("#srcVerse").innerHTML=masSwitcher[i].src;
+        document.querySelector("#textVerse").innerHTML="<span class='quotes'>&#171;</span> "+masSwitcher[i].txt+" <span class='quotes'>&#187;</span>";
+    },400)  
+
+}
    
     $("#srcVerse").animate({
         opacity:"1"
@@ -161,53 +190,45 @@ $("#checkBtn").on("click",function(){showVerse("btn")})
 
 
 function showVerse(key){
-if(key=="btn"){
-    $("#textVerse").animate({
-        height:'toggle',
-        opacity:"toggle"
-    })
+    if(key=="btn"){
+        $("#textVerse").animate({
+            height:'toggle',
+            opacity:"toggle"
+        })
 
-   document.querySelector("#nextBtn").toggleAttribute("disabled");
-
-//    if(document.querySelector("#nextBtn").hasAttribute("disabled")==true){
-//    document.querySelector("#checkBtn").innerHTML="Скрыть";
-//    } else {
-//     document.querySelector("#checkBtn").innerHTML="Проверить";
-//    }
-}
-  
-
-if(key=="src"){
-if( document.querySelector("#nextBtn").hasAttribute("disabled")==true){
-    $("#textVerse").animate({
-        height:'toggle',
-        opacity:"toggle"
-    })
     document.querySelector("#nextBtn").toggleAttribute("disabled");
-}
-}
 
-
-if(document.querySelector("#nextBtn").hasAttribute("disabled")==true){
-    document.querySelector("#checkBtn").innerHTML="Скрыть";
-    } else {
-     document.querySelector("#checkBtn").innerHTML="Проверить";
     }
-
-
+    if(key=="src"){
+    if( document.querySelector("#nextBtn").hasAttribute("disabled")==true){
+        $("#textVerse").animate({
+            height:'toggle',
+            opacity:"toggle"
+        })
+        document.querySelector("#nextBtn").toggleAttribute("disabled");
+    }
+    }
+    if(document.querySelector("#nextBtn").hasAttribute("disabled")==true){
+        document.querySelector("#checkBtn").innerHTML="Скрыть";
+        } else {
+        document.querySelector("#checkBtn").innerHTML="Проверить";
+        }
 }
 
 
 
 
 for(let i=0;i<mas.length;i++){
-    document.querySelector('#srcText').innerHTML+="<p class='srcTexts' onclick='getCard(this)'>"+mas[i].src+"</p>"
+    document.querySelector('#srcText').innerHTML+="<div class='srcBlocks'><p class='srcTexts' onclick='getCard(this)'>"+mas[i].src+"</p><input type='checkbox' class='checkBoxes'></div>"
 }
 $("#srcList").css("height",'40px');
 $(".srcTexts").css("opacity",'0');
-$(".srcTexts").css("display",'none');
+$(".srcBlocks").css("display",'none');
 
-    document.querySelector("#arrowTitleCont").addEventListener("click",getSrcList);
+$("#teqBlock").css("opacity",'0');
+$("#teqBlock").css("display",'none');
+
+document.querySelector("#arrowTitleCont").addEventListener("click",getSrcList);
 
 let rotate = 0, keyForClickFunc = 0;;
 
@@ -226,17 +247,27 @@ let rotate = 0, keyForClickFunc = 0;;
            
             }
 
+            let createChecksFlag = 0;
+
             function srcListShow(coeff){
 
                 if(coeff==0){
                     $("#imgSrc").css("transform",'rotate(-180deg)');
     
-                    $("#srcList").animate({height:'920px'});
+                    $("#srcList").animate({height:'950px'});
                     // $("#srcList").css("height",'1050px');
-                    $(".srcTexts").css("display",'block');
+                    $(".srcBlocks").css("display",'flex');
                     $(".srcTexts").animate({opacity:'1'});
+
+                    $("#teqBlock").animate({opacity:'1'});
+                    $("#teqBlock").css("display",'flex');
                 
                     rotate = 1;
+                    if(createChecksFlag==0){
+                        createChecks();
+                        createChecksFlag=1;
+                        
+                    }
                    
                 }
                     else {
@@ -246,15 +277,100 @@ let rotate = 0, keyForClickFunc = 0;;
                         // $("#srcList").css("height",'30px');
     
                         $(".srcTexts").animate({opacity:'0'});
-                        $(".srcTexts").css("display",'none');
+                        $(".srcBlocks").css("display",'none');
+
+                        $("#teqBlock").animate({opacity:'0'});
+                        $("#teqBlock").css("display",'none');
+                       
                 
                         rotate = 0;
-                        
+                        checkMas();
                     }
 
 
 
             }
+
+          
+
+
+
+
+            let checksMas;
+
+            function createChecks(){
+
+                checksMas = document.querySelectorAll(".checkBoxes");
+
+                for(let i=0;i<checksMas.length;i++){
+                    
+                        // $(checksMas[i]).prop("checked",true)=true;
+                        checksMas[i].checked = true;
+                        // checkMas[i].addEventListener("change",function(){checkedVisual(this)});
+                    }
+            }
+
+
+             
+
+
+
+
+
+
+
+            //Turn off/on all checks functions
+
+                    document.querySelector("#on").addEventListener("click",function(){
+                        for(let i=0;i<checksMas.length;i++){
+                            checksMas[i].checked = true;
+                           
+                        }
+                    })
+                    document.querySelector("#off").addEventListener("click",function(){
+                        for(let i=0;i<checksMas.length;i++){
+                            checksMas[i].checked = false;
+                         
+                        }
+                    })
+
+
+
+
+
+            function checkMas(){
+              
+                actualMas = [];
+
+                for(let i=0;i<checksMas.length;i++){
+                    if( checksMas[i].checked ==true){
+                        actualMas.push(mas[i]);
+                       
+                    } else continue
+                    
+                }
+
+
+                // for(let i=0;i<checksMas.length;i++){
+                //     if(checksMas[i].hasAttribute("checked")==true){
+                //         actualMas.push(mas[i]);
+                        
+                //     } else continue
+                // }
+                if(actualMas.length==mas.length){
+                    masSwitcher=mas;
+                } else if(actualMas.length==0){
+                    actualMas.push({src:"Стих не выбран!",txt:"Нет текста."});
+                    masSwitcher=actualMas;
+                } else {
+                    masSwitcher=actualMas;
+                }
+
+                console.log(masSwitcher)
+            }
+
+
+
 
 
 
@@ -264,7 +380,7 @@ let logKey =0;
             if(logKey==0){
               
 
-                $("#changeLog").animate({height:'180px'});
+                $("#changeLog").animate({height:'200px'});
                 // $("#srcList").css("height",'1050px');
                 $("#changesList").css("display",'block');
                 $("#changesList").animate({opacity:'1'});

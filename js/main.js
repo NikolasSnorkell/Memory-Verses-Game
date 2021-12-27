@@ -380,7 +380,7 @@ let logKey =0;
             if(logKey==0){
               
 
-                $("#changeLog").animate({height:'200px'});
+                $("#changeLog").animate({height:'230px'});
                 // $("#srcList").css("height",'1050px');
                 $("#changesList").css("display",'block');
                 $("#changesList").animate({opacity:'1'});

@@ -6,12 +6,7 @@
 .coverCard{
     background: #d9d9d9;
     border-radius:35px;
-    /* box-shadow:  10px 10px 20px #b2b2b2,
-    0px 10px 20px #b2b2b2,
-    10px 0px 20px #b2b2b2,
-    -10px -10px 20px #ffffff,
-    0px -10px 20px #ffffff,
-    -10px 0px 20px #ffffff; */
+   
     box-shadow:  5px 5px 10px #b2b2b2,
     5px 0px 10px #b2b2b2,
     0px 5px 10px #b2b2b2,
@@ -20,12 +15,7 @@
     -5px 0px 10px #ffffff;
 }
 .coverCard:hover{
-    /* box-shadow:  10px 10px 20px #b2b2b2,
-    0px 10px 20px #b2b2b2,
-    10px 0px 20px #b2b2b2,
-    -10px -10px 20px #ffffff,
-    0px -10px 20px #ffffff,
-    -10px 0px 20px #ffffff; */
+  
     box-shadow:  5px 5px 10px #b2b2b2,
     5px 0px 10px #b2b2b2,
     0px 5px 10px #b2b2b2,

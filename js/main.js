@@ -409,6 +409,14 @@ let logKey =0;
 
 
 
+
+
+
+
+
+
+
+
 // Themes block
 
 
@@ -426,11 +434,11 @@ function themeChange(key){
 
     if(key=="plus"){
         num++;
-        if(num==4) num=0;
+        if(num==5) num=0;
     }
     if(key=="minus"){
         num--;
-        if(num==-1) num=3;
+        if(num==-1) num=4;
     }
     document.querySelector("#themeTitle").innerHTML = "Тема#"+num;
     $('head').append('<link rel="stylesheet" type="text/css" href="css/theme'+num+'.css">');

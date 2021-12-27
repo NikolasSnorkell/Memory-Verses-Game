@@ -434,11 +434,32 @@ function themeChange(key){
 
     if(key=="plus"){
         num++;
-        if(num==5) num=0;
+        
+        if(num==5){
+            $('#imgSrc').attr("src","icons/down_arrow_w.png");
+            $('#on').attr("src","icons/filled_check_w.png");
+            $('#off').attr("src","icons/empty_check_w.png");
+        }else{
+            $('#imgSrc').attr("src","icons/down_arrow.png");
+            $('#on').attr("src","icons/filled_check.png");
+            $('#off').attr("src","icons/empty_check.png");
+        }
+        if(num==6) num=0;
     }
+
     if(key=="minus"){
         num--;
-        if(num==-1) num=4;
+        if(num==-1) num=5;
+        if(num==5){
+            $('#imgSrc').attr("src","icons/down_arrow_w.png");
+            $('#on').attr("src","icons/filled_check_w.png");
+            $('#off').attr("src","icons/empty_check_w.png");
+        }else{
+            $('#imgSrc').attr("src","icons/down_arrow.png");
+            $('#on').attr("src","icons/filled_check.png");
+            $('#off').attr("src","icons/empty_check.png");
+        }
+        
     }
     document.querySelector("#themeTitle").innerHTML = "Тема#"+num;
     $('head').append('<link rel="stylesheet" type="text/css" href="css/theme'+num+'.css">');

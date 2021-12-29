@@ -439,6 +439,14 @@ if(localStorage.getItem('ThemeNumber')==null||localStorage.getItem('ThemeNumber'
 $('head').append('<link rel="stylesheet" type="text/css" href="css/theme'+num+'.css">');
 document.querySelector("#themeTitle").innerHTML = "Тема#"+num;
 
+
+if(num==5){
+    $('#imgSrc').attr("src","icons/down_arrow_w.png");
+    $('#on').attr("src","icons/filled_check_w.png");
+    $('#off').attr("src","icons/empty_check_w.png");
+}
+
+
 $('#plusT').on('click',function(){themeChange("plus")});
 $('#minusT').on('click',function(){themeChange("minus")});
 

@@ -1,5 +1,7 @@
 ! WIP !
 
+You can check this out via link below:
+https://nikolassnorkell.github.io/Memory-Verses-Game/
 
 ROADMAP 
 

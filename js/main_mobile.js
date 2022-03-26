@@ -438,7 +438,7 @@ let logKey =0;
             if(logKey==0){
               
 
-                $("#changeLog").animate({height:'300px'});
+                $("#changeLog").animate({height:'350px'});
                 // $("#srcList").css("height",'1050px');
                 $("#changesList").css("display",'block');
                 $("#changesList").animate({opacity:'1'});

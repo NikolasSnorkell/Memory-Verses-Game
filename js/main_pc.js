@@ -224,12 +224,12 @@ function showVerse(key){
 
      document.querySelector("#nextBtn").toggleAttribute("disabled");
 
-    if( checkHideFlag == 0){
+    if(document.querySelector("#nextBtn").hasAttribute("disabled")){
         document.querySelector("#checkBtn").innerHTML="Скрыть";
-        checkHideFlag=1;
+       
         } else {
         document.querySelector("#checkBtn").innerHTML="Проверить";
-        checkHideFlag=0;
+      
         }
 
     }

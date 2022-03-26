@@ -5,7 +5,16 @@
 
 }
 
+#idk_point{
+    color: #e0e0e0;
+}
+
+#know_point{
+    color: #e0e0e0;
+}
+
 .coverCard{
+    background: #d9d9d9;
     box-shadow: 1px 10px 20px rgba(0, 0, 0,0.4);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -102,10 +111,3 @@
     transition: background 0.4s ease-in-out,box-shadow 0.4s ease-in-out;
 }
 
-#idk_point{
-    color: #AD66B2;
-}
-
-#know_point{
-    color: #4138B7;
-}

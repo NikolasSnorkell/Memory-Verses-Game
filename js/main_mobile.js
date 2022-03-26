@@ -624,57 +624,68 @@ function funcTouchEnd(){
                
    
         if(xDiff>100){
-            $("#cardFirst").css({
-                opacity:"0"
-            });
+            // $("#cardFirst").css({
+            //     opacity:"0"
+            // });
 
             if(lock==1) rightAns++;
+
+            nextMobileCard();
         } else if (xDiff<-100){
-            $("#cardFirst").css({
-                opacity:"0"
-            });
+            // $("#cardFirst").css({
+            //     opacity:"0"
+            // });
     
             if(lock==1) unknownAns++;
+
+            nextMobileCard();
         }
     
-        $("#idk_point").html(unknownAns);
-        $("#know_point").html(rightAns);
-
-
-
-        if($("#textVerse").css("opacity")>0&&checkHideFlag==1){
-            // setTimeout(() => {
-                $("#textVerse").animate({
-                    height:'toggle',
-                    opacity:"toggle"
-                },0);
-                document.querySelector("#checkBtn").innerHTML="Проверить";
-                checkHideFlag=0;
-            }
-
-
-        getCard($("#nextBtn"));
-
      
-
-        setTimeout(() => {
-            $("#cardFirst").animate({
-                opacity:"1"
-            },200);
-
-        }, 300);
       
 
-      
-
-      
-
-      
-
-
-
-        flag=-1;
+       
     
+}
+
+
+
+function nextMobileCard(){
+
+                        $("#cardFirst").css({
+                            opacity:"0"
+                        });
+
+
+                        $("#idk_point").html(unknownAns);
+                        $("#know_point").html(rightAns);
+
+
+
+                        if($("#textVerse").css("opacity")>0&&checkHideFlag==1){
+                            // setTimeout(() => {
+                                $("#textVerse").animate({
+                                    height:'toggle',
+                                    opacity:"toggle"
+                                },0);
+                                document.querySelector("#checkBtn").innerHTML="Проверить";
+                                checkHideFlag=0;
+                            }
+
+
+                        getCard($("#nextBtn"));
+
+                    
+
+                        setTimeout(() => {
+                            $("#cardFirst").animate({
+                                opacity:"1"
+                            },200);
+
+                        }, 300);
+
+                        flag=-1;
+
 }
 
     // console.log(rightAns, unknownAns);

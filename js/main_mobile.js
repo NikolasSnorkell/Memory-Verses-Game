@@ -556,9 +556,9 @@ $("#cardFirst").on("touchstart",function(){
     funcTouchStart(event);
 });
 
-$("#cardFirst").on("touchmove",function(){
-    funcTouchMove(event);
-});
+// $("#cardFirst").on("touchmove",function(){
+//     funcTouchMove(event);
+// });
 
 
 
@@ -606,6 +606,12 @@ function funcTouchMove(event){
 
 
 function funcTouchEnd(){
+
+    let x2 = event.touches[0].clientX;
+    
+    xDiff = x2-x1;
+
+    flag=2;
   
         $("#cardFirst").css({
             transform:"translateX(0px)"
@@ -617,13 +623,13 @@ function funcTouchEnd(){
       
                
    
-        if(xDiff>200){
+        if(xDiff>100){
             $("#cardFirst").css({
                 opacity:"0"
             });
 
             if(lock==1) rightAns++;
-        } else if (xDiff<-200){
+        } else if (xDiff<-100){
             $("#cardFirst").css({
                 opacity:"0"
             });

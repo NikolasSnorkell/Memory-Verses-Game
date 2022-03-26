@@ -258,6 +258,7 @@ function showVerse(key){
                     opacity:"toggle"
                 })
                 document.querySelector("#nextBtn").toggleAttribute("disabled");
+                document.querySelector("#checkBtn").innerHTML="Проверить";;
             }
         }
     

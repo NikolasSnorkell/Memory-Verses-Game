@@ -101,3 +101,11 @@
     box-shadow:0 0px 7px 0 rgba(0, 0, 0,0.4);
     transition: background 0.4s ease-in-out,box-shadow 0.4s ease-in-out;
 }
+
+#idk_point{
+    color: #AD66B2;
+}
+
+#know_point{
+    color: #4138B7;
+}

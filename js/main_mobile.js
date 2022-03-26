@@ -556,9 +556,9 @@ $("#cardFirst").on("touchstart",function(){
     funcTouchStart(event);
 });
 
-// $("#cardFirst").on("touchmove",function(){
-//     funcTouchMove(event);
-// });
+$("#cardFirst").on("touchmove",function(){
+    funcTouchMove(event);
+});
 
 
 
@@ -607,11 +607,11 @@ function funcTouchMove(event){
 
 function funcTouchEnd(){
 
-    let x2 = event.touches[0].clientX;
+    // let x2 = event.touches[0].clientX;
     
-    xDiff = x2-x1;
+    // xDiff = x2-x1;
 
-    flag=2;
+    // flag=2;
   
         $("#cardFirst").css({
             transform:"translateX(0px)"

@@ -18,7 +18,7 @@
 }
 
 body{
-   
+    width: 100vw;
     min-height: 100vh;
    height: auto;
    overflow-y: scroll;
@@ -69,7 +69,7 @@ input{
 /* ----------------------------------- */
 
 #container{
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
     position: relative;
 
@@ -379,13 +379,7 @@ opacity: 1;
     font-size: 5rem;
 }
 
-#idk_point{
-    color: yellow;
-}
 
-#know_point{
-    color: rgb(0, 255, 0);
-}
 
 
 

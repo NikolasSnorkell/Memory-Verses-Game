@@ -155,7 +155,7 @@ input{
 }
 
 .buttons{
-    width: 50%;
+    width: 100%;
     height: 50px;
     font-size: 1.3rem;
     
@@ -367,8 +367,25 @@ opacity: 1;
 
 
 
+#points_block{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
 
+#points_block p{
+    font-size: 5rem;
+}
 
+#idk_point{
+    color: yellow;
+}
+
+#know_point{
+    color: rgb(0, 255, 0);
+}
 
 
 

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Verses</title>
+    <link rel="stylesheet" href="css/null.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    
+   <!-- Блок для добавления стихов в массив
+ ------------------------------------ -->
+<!-- <input type="text" id="innerVerse" value=""></input>
+<button id="btn" onclick="getMas()">Add</button>
+<button id="btn2" onclick="Output()">Show</button>
+
+<p id="output"></p> -->
+<div id="container">
+
+<div id="changeLog">
+    <h1>Что нового?</h1>
+    <p id="changesList">
+       <b>v1.1</b> [24.12.21]<br>
+            -несколько новых стихов, <br>
+            -функция перехода на выбранный стих из списка. <br>
+         <br>
+        <b>v1.2</b> [27.12.21]<br>
+            -несколько новых стихов, <br>
+            -функция изменения набора стихов, среди которых производится выбор,<br> 
+            -новые цветовые схемы. 
+       
+    </p>
+</div>
+
+    <div id="points_block">
+        <p id="idk_point">0</p>
+        <p id="know_point">0</p>
+    </div>
+
+<div class="coverCard">
+            <div id="srcList">
+                <div id="arrowTitleCont">
+                    <div id="srcListImg">
+                        <img src="icons/down_arrow.png" alt="" id="imgSrc">
+                    </div>
+                    <div id="srcListTitle">Весь список</div>
+                </div>
+                <div id="teqBlock">
+                    <div id="themeCont">
+                        <span class="plusMinus" id="minusT">-</span>
+                        <p id="themeTitle">Тема#0</p>
+                        <span class="plusMinus" id="plusT">+</span>
+                    </div>
+                    <div id="checkSwitches">
+                        <img src="icons/filled_check.png" alt="checked_check" id="on">
+                        <span id="slash">/</span> 
+                        <img src="icons/empty_check.png" alt="empty_check" id="off">
+                    </div></div>
+                <div id="srcText">
+                   
+                </div>
+            </div>
+
+
+
+        <div id="cardFirst" >
+            <div id="textVerse"></div>
+            <div id="srcVerse">Сделайте свайп чтобы начать</div>
+        </div>
+        <div id="btns">
+            <!-- <button class="buttons" id="nextBtn" style="visibility: hidden;">Начать</button> -->
+            <button class="buttons" id="checkBtn">Проверить</button>
+        </div>
+</div>
+   <div id="contactCont"> 
+       <p class="contactInfo">По вопросам и предложениям: <a href="mailto:memoryverse.contact@gmail.com">memoryverse.contact@gmail.com</a></p>
+   </div>
+
+</div>
+
+
+
+
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/main_mobile.js"></script>
+</body>
+</html>

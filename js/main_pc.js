@@ -101,6 +101,7 @@ document.querySelector("#nextBtn").addEventListener("click",getCard);
 let startBtnNameKey = 0;
 let lock = 0;
 let checkLock = 0;
+let checkHideFlag = 0;
 //Apply index to verses
 
 function getCard(elem){
@@ -112,6 +113,7 @@ function getCard(elem){
             },1)
         }
         lock=1;
+
         if(startBtnNameKey==0){
             document.querySelector("#nextBtn").innerHTML = "Далее";
         }
@@ -123,13 +125,16 @@ function getCard(elem){
         }
         checkLock=1;
 
-       
+    
 
         if(elem.innerText==undefined){
+
             index = getNumber(0,masSwitcher.length);   
           
             showcard(index,"masSwitcher");
         } else {
+        
+
             for(let i=0;i<mas.length;i++){
                 if(mas[i].src==elem.innerText) {
                     index=i;
@@ -172,16 +177,21 @@ function showcard(i,key){
     $("#srcVerse").animate({
         opacity:"0"
     },400);
+    $("#textVerse").animate({
+        opacity:"0"
+    },400);
 
     if((masSwitcher.length==mas.length)||key=="mas"){
     setTimeout(function(){
     document.querySelector("#srcVerse").innerHTML=mas[i].src;
     document.querySelector("#textVerse").innerHTML="<span class='quotes'>&#171;</span> "+mas[i].txt+" <span class='quotes'>&#187;</span>";
    },400)
+
 } else {
     setTimeout(function(){      
         document.querySelector("#srcVerse").innerHTML=masSwitcher[i].src;
         document.querySelector("#textVerse").innerHTML="<span class='quotes'>&#171;</span> "+masSwitcher[i].txt+" <span class='quotes'>&#187;</span>";
+     
     },400)  
 
 }
@@ -189,7 +199,9 @@ function showcard(i,key){
     $("#srcVerse").animate({
         opacity:"1"
     },400);
-
+    $("#textVerse").animate({
+        opacity:"1"
+    },400);
 }
 
 
@@ -210,22 +222,57 @@ function showVerse(key){
             opacity:"toggle"
         })
 
-    document.querySelector("#nextBtn").toggleAttribute("disabled");
+     document.querySelector("#nextBtn").toggleAttribute("disabled");
 
-    }
-    if(key=="src"){
-    if( document.querySelector("#nextBtn").hasAttribute("disabled")==true){
-        $("#textVerse").animate({
-            height:'toggle',
-            opacity:"toggle"
-        })
-        document.querySelector("#nextBtn").toggleAttribute("disabled");
-    }
-    }
-    if(document.querySelector("#nextBtn").hasAttribute("disabled")==true){
+    if( checkHideFlag == 0){
         document.querySelector("#checkBtn").innerHTML="Скрыть";
+        checkHideFlag=1;
         } else {
         document.querySelector("#checkBtn").innerHTML="Проверить";
+        checkHideFlag=0;
+        }
+
+    }
+    // } else {
+    //     $("#textVerse").animate({
+    //         opacity:"0"
+    //     },500);
+    // }
+
+ 
+
+
+    if(key=="src"){
+     
+            // $("#textVerse").animate({
+            //     height:'toggle',
+            //     opacity:"toggle"
+            // },0);
+            // document.querySelector("#checkBtn").innerHTML="Проверить";
+            // checkHideFlag=0;
+
+
+            if( document.querySelector("#nextBtn").hasAttribute("disabled")==true){
+                $("#textVerse").animate({
+                    height:'toggle',
+                    opacity:"toggle"
+                })
+                document.querySelector("#nextBtn").toggleAttribute("disabled");
+            }
+        }
+    
+       
+
+    
+
+
+
+    if( checkHideFlag == 0){
+        document.querySelector("#checkBtn").innerHTML="Скрыть";
+        checkHideFlag=1;
+        } else {
+        document.querySelector("#checkBtn").innerHTML="Проверить";
+        checkHideFlag=0;
         }
 }
 
@@ -490,6 +537,22 @@ function themeChange(key){
     $('head').append('<link rel="stylesheet" type="text/css" href="css/theme'+num+'.css">');
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

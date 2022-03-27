@@ -184,13 +184,13 @@ function showcard(i,key){
     if((masSwitcher.length==mas.length)||key=="mas"){
     setTimeout(function(){
     document.querySelector("#srcVerse").innerHTML=mas[i].src;
-    document.querySelector("#textVerse").innerHTML="<span class='quotes'>&#171;</span> "+mas[i].txt+" <span class='quotes'>&#187;</span>";
+    document.querySelector("#textVerse").innerHTML="<span class='quotes'>&#171;</span>"+mas[i].txt+"<span class='quotes'>&#187;</span>";
    },400)
 
 } else {
     setTimeout(function(){      
         document.querySelector("#srcVerse").innerHTML=masSwitcher[i].src;
-        document.querySelector("#textVerse").innerHTML="<span class='quotes'>&#171;</span> "+masSwitcher[i].txt+" <span class='quotes'>&#187;</span>";
+        document.querySelector("#textVerse").innerHTML="<span class='quotes'>&#171;</span>"+masSwitcher[i].txt+"<span class='quotes'>&#187;</span>";
      
     },400)  
 

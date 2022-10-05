@@ -3,14 +3,6 @@
 
 }
 
-#idk_point{
-    color: #252525;
-}
-
-#know_point{
-    color: #252525;
-}
-
 .coverCard{
     background: #d9d9d9;
     border-radius:35px;
@@ -74,6 +66,15 @@
 
  .srcBlocks:hover{
     background: rgb(255, 255, 255);
+}
+
+#tags span{
+
+    background: rgb(213, 213, 213);
+}
+
+#tags span.clickedTag{
+    background: rgb(183, 183, 183);
 }
 
 #themeCont p{

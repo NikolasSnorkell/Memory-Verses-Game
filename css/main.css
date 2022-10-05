@@ -18,7 +18,7 @@
 }
 
 body{
-    width: 100vw;
+   
     min-height: 100vh;
    height: auto;
    overflow-y: scroll;
@@ -69,7 +69,7 @@ input{
 /* ----------------------------------- */
 
 #container{
-    width: 100%;
+    width: 100vw;
     min-height: 100vh;
     position: relative;
 
@@ -108,7 +108,6 @@ input{
 
 #textVerse{
     font-size: 1.4rem;
-  
 }
 
 #srcVerse{
@@ -154,6 +153,71 @@ input{
     justify-content: center;
    
 }
+
+
+
+#tagsList{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+}
+
+#arrowTagsTitleCont{
+    display: flex;
+    width: 100%;
+    column-gap: 20px;
+    /* align-items: center; */
+    padding: 10px;
+}
+
+#arrowTagsTitleCont:hover{
+    cursor: pointer;
+}
+
+#srcTagsImg{
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+#srcTagsImg > img{
+    width: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#tags{
+   
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+#tags span{
+    /* display: none; */
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 10px;
+    background: rgb(189, 189, 189);
+}
+
+#tags span.clickedTag{
+    background: lightgrey;
+}
+
+#tags span:hover{
+    cursor: pointer;
+    
+}
+
+
 
 .buttons{
     width: 100%;
@@ -311,9 +375,8 @@ opacity: 1;
 
 
 .quotes{
-    font-size: 1.8rem;
-    vertical-align:text-top;
- 
+    font-size: 1.6rem;
+    vertical-align:middle;
 }
 
 
@@ -346,11 +409,10 @@ opacity: 1;
     position: absolute;
     top: 0;
     min-height: 35px;
-    height: auto;
     width: 500px;
     text-align: center;
     margin: 0 auto;
-    padding: 5px 25px 30px;
+    padding: 5px 25px;
     cursor: pointer;
     border-top: none;
  
@@ -364,7 +426,7 @@ opacity: 1;
 
     display: none;
     opacity: 0;
-    margin-top: 20px;
+    margin-top: 50px;
     text-align: left;
 }
 
@@ -382,7 +444,13 @@ opacity: 1;
     font-size: 5rem;
 }
 
+#idk_point{
+    color: yellow;
+}
 
+#know_point{
+    color: rgb(0, 255, 0);
+}
 
 
 

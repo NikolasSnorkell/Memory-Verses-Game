@@ -1,22 +1,11 @@
-
-
-
 #container{
     background: #262626;
    
 
 }
 
-#idk_point{
-    color: #ececec;
-}
-
-#know_point{
-    color: #ececec;
-}
-
 .coverCard{
-    background: #333333;
+    background: #d9d9d9;
     border-radius:35px;
     box-shadow:  5px 5px 10px #151515,
     0px 5px 10px #151515,
@@ -76,6 +65,15 @@
 
  .srcBlocks:hover{
     background: rgb(48, 48, 48);
+}
+
+#tags span{
+
+    background: rgb(30, 30, 30);
+}
+
+#tags span.clickedTag{
+    background: rgb(98, 98, 98);
 }
 
 #themeCont p{

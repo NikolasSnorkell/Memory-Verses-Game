@@ -3,7 +3,7 @@ let tagsObj = {};
 
 
 
-$.getJSON('../json/verses.json', { 'get_param': 'value' }, function (data) {
+$.getJSON('https://github.com/NikolasSnorkell/Memory-Verses-Game/blob/master/json/verses.json', { 'get_param': 'value' }, function (data) {
     mas = data;
     console.log(mas.length);
     put_info();

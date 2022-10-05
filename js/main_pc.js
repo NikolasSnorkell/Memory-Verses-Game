@@ -531,7 +531,7 @@ function changeLogFunc() {
     if (logKey == 0) {
 
 
-        $("#changeLog").animate({ height: '300px' });
+        $("#changeLog").animate({ height: '150px' });
         // $("#srcList").css("height",'1050px');
         $("#changesList").css("display", 'block');
         $("#changesList").animate({ opacity: '1' });

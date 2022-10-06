@@ -702,7 +702,7 @@ function funcTouchMove(event) {
 }
 
 $("#cardFirst").on("touchend mouseup", function(event){
-alert("touchend")
+
 
     let x2 = event.touches[0].clientX;
 
@@ -714,7 +714,7 @@ alert("touchend")
         transform: "translateX(0px)"
     });
 
-
+    alert("xDiff"+xDiff);
 
     if (flag == 2) {
 

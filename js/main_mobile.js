@@ -637,7 +637,7 @@ function themeChange(key) {
 
 
 
-let x1 = null, rightAns = 0, unknownAns = 0;
+let x1 = null,x2=null, rightAns = 0, unknownAns = 0;
 let xDiff, flag = -1;
 
 $("#cardFirst").on("touchstart mousedown", function(event){
@@ -669,7 +669,7 @@ function funcTouchStart(event) {
 
 
 $("#cardFirst").on("touchmove mousemove", function(event){
-    let x2 = event.touches[0].clientX;
+     x2 = event.touches[0].clientX;
 
     xDiff = x2 - x1;
 
@@ -704,7 +704,7 @@ function funcTouchMove(event) {
 $("#cardFirst").on("touchend mouseup", function(event){
 
 
-    let x2 = event.touches[0].clientX;
+     x2 = event.touches[0].clientX;
 
     xDiff = x2 - x1;
 

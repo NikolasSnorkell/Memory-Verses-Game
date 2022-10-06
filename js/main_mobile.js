@@ -908,10 +908,10 @@ function funcTouchMove(event) {
 }
 
 $("#cardFirst").on("touchend mouseup", function(event){
-    alert("func start");
+  
 
-    //  x2 = event.touches[0].clientX;
-     alert("x2 caclced");
+ x2 = event.touches[0].clientX;
+     
     xDiff = x2 - x1;
 
     flag = 2;
@@ -920,7 +920,7 @@ $("#cardFirst").on("touchend mouseup", function(event){
         transform: "translateX(0px)"
     });
 
-    alert("xDiff"+xDiff);
+   
 
     if (flag == 2) {
 

@@ -637,9 +637,15 @@ function themeChange(key) {
 
 
 
+let x1 = null, rightAns = 0, unknownAns = 0;
+let xDiff, flag = -1;
 
+$("#cardFirst").on("touchstart mousedown", function(event){
+    const firstTouch = event.touches[0];
+    x1 = firstTouch.clientX;
 
-$("#cardFirst").on("touchstart", funcTouchStart(e));
+    flag = 0;
+});
 
 // $("#cardFirst").on("touchmove",function(){
 //     funcTouchMove(event);
@@ -647,8 +653,7 @@ $("#cardFirst").on("touchstart", funcTouchStart(e));
 
 
 
-let x1 = null, rightAns = 0, unknownAns = 0;
-let xDiff, flag = -1;
+
 
 
 
@@ -663,7 +668,18 @@ function funcTouchStart(event) {
 }
 
 
-$("#cardFirst").on("touchmove", funcTouchMove(e));
+$("#cardFirst").on("touchmove mousemove", function(event){
+    let x2 = event.touches[0].clientX;
+
+    xDiff = x2 - x1;
+
+
+    $("#cardFirst").css({
+        transform: "translateX(" + xDiff + "px)"
+    });
+
+    flag = 1;
+});
 
 function funcTouchMove(event) {
     // if(x1) {
@@ -679,13 +695,83 @@ function funcTouchMove(event) {
         transform: "translateX(" + xDiff + "px)"
     });
 
-    flag = 2;
+    flag = 1;
 
     // x1=null;
 
 }
 
-$("#cardFirst").on("touchend", funcTouchEnd(e));
+$("#cardFirst").on("touchend mouseup", function(event){
+    let x2 = event.touches[0].clientX;
+
+    xDiff = x2 - x1;
+
+    flag = 2;
+
+    $("#cardFirst").css({
+        transform: "translateX(0px)"
+    });
+
+
+
+    if (flag == 2) {
+
+
+
+        if (xDiff > 100) {
+            $("#cardFirst").css({
+                opacity: "0"
+            });
+
+            if (lock == 1) rightAns++;
+        } else if (xDiff < -100) {
+            $("#cardFirst").css({
+                opacity: "0"
+            });
+
+            if (lock == 1) unknownAns++;
+        }
+
+        $("#idk_point").html(unknownAns);
+        $("#know_point").html(rightAns);
+
+
+
+        if ($("#textVerse").css("opacity") > 0 && checkHideFlag == 1) {
+            // setTimeout(() => {
+            $("#textVerse").animate({
+                height: 'toggle',
+                opacity: "toggle"
+            }, 0);
+            document.querySelector("#checkBtn").innerHTML = "Проверить";
+            checkHideFlag = 0;
+        }
+
+
+        getCard($("#nextBtn"));
+
+
+
+        setTimeout(() => {
+            $("#cardFirst").animate({
+                opacity: "1"
+            }, 200);
+
+        }, 300);
+
+
+
+
+
+
+
+
+
+
+        flag = -1;
+
+    }
+});
 
 
 function funcTouchEnd(event) {

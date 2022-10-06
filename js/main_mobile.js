@@ -901,7 +901,7 @@ function funcTouchMove(event) {
         transform: "translateX(" + xDiff + "px)"
     });
 
-    flag = 2;
+    flag = 1;
 
     // x1=null;
 
@@ -910,7 +910,7 @@ function funcTouchMove(event) {
 $("#cardFirst").on("touchend mouseup", function(event){
   
 
- x2 = event.touches[0].clientX;
+ //x2 = event.touches[0].clientX;
      
     xDiff = x2 - x1;
 

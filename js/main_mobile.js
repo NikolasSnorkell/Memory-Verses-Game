@@ -702,6 +702,8 @@ function funcTouchMove(event) {
 }
 
 $("#cardFirst").on("touchend mouseup", function(event){
+alert("touchend")
+
     let x2 = event.touches[0].clientX;
 
     xDiff = x2 - x1;

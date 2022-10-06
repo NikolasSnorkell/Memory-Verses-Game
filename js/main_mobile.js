@@ -663,7 +663,7 @@ function funcTouchStart(event) {
 }
 
 
-
+$("#cardFirst").on("touchmove", funcTouchMove(e));
 
 function funcTouchMove(event) {
     // if(x1) {
@@ -685,12 +685,10 @@ function funcTouchMove(event) {
 
 }
 
-$("#cardFirst").on("touchend", function () {
-    funcTouchEnd();
-});
+$("#cardFirst").on("touchend", funcTouchEnd(e));
 
 
-function funcTouchEnd() {
+function funcTouchEnd(event) {
 
     let x2 = event.touches[0].clientX;
 
